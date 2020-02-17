@@ -1,26 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import './style/style.css'
+import { AppContainer } from './style/style'
+import { TextAreaComponent, SelectEncode } from './components'
 
-function App() {
+const App = () => {
+  const [Result, setResult] = useState()
+  const handleChange = text => {
+    setResult(text)
+  }
+
+  const encodeNextLetter = (text) => {
+    const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <AppContainer>
+      <TextAreaComponent handleChange={handleChange} placeholder={"Ecrivez votre message à encoder"}/>
+      <SelectEncode />
+      <p>{Result}</p>
+    </AppContainer>
     </div>
   );
-}
+ }
+
 
 export default App;
