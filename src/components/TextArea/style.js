@@ -8,7 +8,7 @@ export const TextAreaContainer = styled.div({
 export const TextArea = styled.textarea({
     outline: 'none',
     resize: 'none',
-    padding: "20px",
+    padding: "5px",
     fontSize: "20px",
     border: 'none',
     width: '100%',
